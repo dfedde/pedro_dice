@@ -31,4 +31,13 @@ describe Die do
 
   end
 
+  describe "#roll" do
+
+    it "will set the value to a ranom number" do
+      values = (1..5).map {die.roll.to_i}.uniq
+      expect(values.length).to be > 1
+    end
+
+  end
+
 end

@@ -4,6 +4,7 @@
 # and it can return its value as a int or a utf8 string
 #
 class Die
+  Random = Random.new
 
   ##
   # creates a new Die object
@@ -16,6 +17,8 @@ class Die
   ##
   # roll the dice
   def roll
+    @value = Random.rand 1..6
+    self
   end
 
   ##
