@@ -4,6 +4,15 @@
 # and it can return its value as a int or a utf8 string
 #
 class Die
+
+  ##
+  # creates a new Die object
+  #
+  # @param value [integer] the value of the dice
+  def initialize(value = nil)
+    @value = value || self.roll.to_i
+  end
+
   ##
   # roll the dice
   def roll
@@ -12,6 +21,7 @@ class Die
   ##
   # return the value of the dice
   def to_i
+    @value
   end
 
   ##
