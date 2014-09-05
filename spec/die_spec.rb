@@ -66,4 +66,15 @@ describe Die do
 
     end
   end
+  describe "#to_s" do
+    %w(ace deuce trey cater cinque sice).each_with_index do |name, i|
+      side = i + 1
+      context "when value is #{side}" do
+
+        it "returns #{name}" do
+          expect(Die.new(side).to_s).to eql name
+        end
+      end
+    end
+  end
 end

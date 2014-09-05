@@ -31,8 +31,9 @@ class Die
   end
 
   ##
-  # retun the utf8 string of the dice
+  # retun the name of a dice side
   def to_s
+    %w(0 ace deuce trey cater cinque sice)[@value]
   end
 
   ##
