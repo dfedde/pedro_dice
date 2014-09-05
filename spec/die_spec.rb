@@ -40,4 +40,30 @@ describe Die do
 
   end
 
+  describe "#<=>" do
+
+    context "comparing a dice of 4 to a dice of 1" do
+
+      it "results in a 1" do
+        expect(Die.new(4) <=> Die.new(1)).to be 1
+      end
+
+    end
+
+    context "comparing a dice of 1 to a dice of 4" do
+
+      it "results in a -1" do
+        expect(Die.new(1) <=> Die.new(4)).to be (-1)
+      end
+
+    end
+
+    context "comparing a dice of 2 to a dice of 2" do
+
+      it "results in a 0" do
+        expect(Die.new(2) <=> Die.new(2)).to be 0
+      end
+
+    end
+  end
 end

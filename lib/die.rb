@@ -4,7 +4,10 @@
 # and it can return its value as a int or a utf8 string
 #
 class Die
+  include Comparable
+
   Random = Random.new
+
 
   ##
   # creates a new Die object
@@ -34,6 +37,7 @@ class Die
 
   ##
   # determain witch dice is bigger 
-  def <=>
+  def <=> other
+    self.to_i <=> other.to_i
   end
 end
