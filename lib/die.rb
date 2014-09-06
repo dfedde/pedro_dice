@@ -37,6 +37,12 @@ class Die
   end
 
   ##
+  # return the utf-8 misc dice cariter for the side
+  def to_symbol
+    %w(0 ⚀ ⚁ ⚂ ⚃ ⚄ ⚅)[@value]
+  end
+
+  ##
   # determain witch dice is bigger 
   def <=> other
     self.to_i <=> other.to_i
