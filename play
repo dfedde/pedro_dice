@@ -1,0 +1,9 @@
+#!/bin/env ruby
+
+#ask how many players
+
+puts "how many players?"
+
+players = gets.chomp
+
+
