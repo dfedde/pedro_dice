@@ -1,2 +1,5 @@
 source 'https://rubygems.org'
-gem 'rspec'
+
+group :devopment do
+  gem 'rspec'
+end
