@@ -1,8 +1,8 @@
 require "spec_helper"
 
-describe Bet do
+describe PedroDice::Bet do
   before :each do
-    @bet = Bet.new
+    @bet = PedroDice::Bet.new
   end
   [
     [[1,1], [1,2],   -1 ],
@@ -19,7 +19,7 @@ describe Bet do
     diff          = comp[2]
 
     it "a bet with a count of #{acount} and a side of #{aside} is #{["smaller than", "equal to", "bigger than"][diff + 1]} a bet with a count of #{bcount} and a side of #{bside}" do
-      expect(Bet.new(acount, aside) <=> Bet.new(bcount, bside)).to eql diff
+      expect(PedroDice::Bet.new(acount, aside) <=> PedroDice::Bet.new(bcount, bside)).to eql diff
     end
   end
 end

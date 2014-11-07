@@ -1,9 +1,9 @@
 
 require "spec_helper"
 
-describe Die do
-  subject   { Die.new }
-  let(:die) { Die.new }
+describe PedroDice::Die do
+  subject   { PedroDice::Die.new }
+  let(:die) { PedroDice::Die.new }
 
   it { is_expected.to respond_to :roll      }
   it { is_expected.to respond_to :to_s      }
@@ -16,7 +16,7 @@ describe Die do
     context "when a single argument is given" do
 
       it "sets the value" do
-        expect(Die.new(6).to_i).to be 6
+        expect(PedroDice::Die.new(6).to_i).to be 6
       end
 
     end
@@ -24,8 +24,8 @@ describe Die do
     context "when no argument is given" do
 
       it "roll is called" do
-        expect_any_instance_of(Die).to receive :roll
-        Die.new
+        expect_any_instance_of(PedroDice::Die).to receive :roll
+        PedroDice::Die.new
       end
 
     end
@@ -46,7 +46,7 @@ describe Die do
     context "comparing a dice of 4 to a dice of 1" do
 
       it "results in a 1" do
-        expect(Die.new(4) <=> Die.new(1)).to be 1
+        expect(PedroDice::Die.new(4) <=> PedroDice::Die.new(1)).to be 1
       end
 
     end
@@ -54,7 +54,7 @@ describe Die do
     context "comparing a dice of 1 to a dice of 4" do
 
       it "results in a -1" do
-        expect(Die.new(1) <=> Die.new(4)).to be (-1)
+        expect(PedroDice::Die.new(1) <=> PedroDice::Die.new(4)).to be (-1)
       end
 
     end
@@ -62,7 +62,7 @@ describe Die do
     context "comparing a dice of 2 to a dice of 2" do
 
       it "results in a 0" do
-        expect(Die.new(2) <=> Die.new(2)).to be 0
+        expect(PedroDice::Die.new(2) <=> PedroDice::Die.new(2)).to be 0
       end
 
     end
@@ -74,7 +74,7 @@ describe Die do
       context "when value is #{side}" do
 
         it "returns #{name}" do
-          expect(Die.new(side).to_s).to eql name
+          expect(PedroDice::Die.new(side).to_s).to eql name
         end
       end
     end
@@ -86,7 +86,7 @@ describe Die do
       context "when value is #{side}" do
 
         it "returns #{symbol}" do
-          expect(Die.new(side).to_symbol).to eql symbol
+          expect(PedroDice::Die.new(side).to_symbol).to eql symbol
         end
       end
     end
